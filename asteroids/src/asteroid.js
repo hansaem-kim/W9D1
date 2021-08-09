@@ -1,4 +1,5 @@
 const Util = require("./utils")
+const MovingObject = require("./moving_object")
 
 const defaultAsteroid = {
     color: "blue",
@@ -6,11 +7,14 @@ const defaultAsteroid = {
 }
 
 function Asteroid(argument){
-    new MovingObject({
+    MovingObject.call(this,{
         pos: argument,
         vel: Util.randomVec(10),
         radius: defaultAsteroid["radius"],
         color: defaultAsteroid["color"]
-    })
+    } )
 }
 
+Util.inherits(Asteroid, MovingObject);
+
+module.exports = Asteroid;

@@ -1,5 +1,7 @@
-const DIM_X = 500;
-const DIM_Y = 500; 
+const Asteroid = require("./asteroid")
+
+const DIM_X = window.innerWidth; 
+const DIM_Y = window.innerHeight; 
 NUM_ASTEROIDS = 10;
 
 function Game() {
@@ -15,8 +17,7 @@ Game.prototype.addAsteroids = function() {
 }
 
 Game.prototype.randomPosition = function() {
-    return [Math.floor(math.random() * DIM_X), Math.floor(math.random() * DIM_Y)]
-
+    return [Math.floor(Math.random() * DIM_X), Math.floor(Math.random() * DIM_Y)];
 }
 
 Game.prototype.draw = function(ctx) {
@@ -25,5 +26,8 @@ Game.prototype.draw = function(ctx) {
 }
 
 Game.prototype.moveObjects = function(){
+    console.log("Im working")
     this.asteroids.forEach(ele => ele.move);
 }
+
+module.exports = Game;
