@@ -25,7 +25,7 @@ eval("console.log(\"Webpack is working!\")\r\n\r\nconst MovingObject = __webpack
   \******************************/
 /***/ ((module) => {
 
-eval("function MovingObject(option_obj){\r\n  this.pos = option_obj[\"pos\"];\r\n  this.vel = option_obj[\"vel\"];\r\n  this.radius = option_obj[\"radius\"];\r\n  this.color = option_obj[\"color\"];\r\n}\r\n\r\nconst testCircle = new MovingObject({\r\npos: [50, 50],\r\nvel: [3, 4],\r\nradius: 25,\r\ncolor: \"green\"\r\n})\r\n\r\n\r\n\r\nMovingObject.prototype.draw = function (ctx) {\r\n  ctx.beginPath();\r\n\r\n  ctx.arc(\r\n    this.pos[0],\r\n    this.pos[1],\r\n    this.radius,\r\n    0,\r\n    2 * Math.PI,\r\n    true\r\n  );\r\n\r\n  ctx.fillStyle = this.color;\r\n  ctx.fill()\r\n\r\n};\r\n\r\n\r\nmodule.exports = MovingObject;\r\n\n\n//# sourceURL=webpack://asteroids/./src/moving_object.js?");
+eval("function MovingObject(option_obj){\r\n  this.pos = option_obj[\"pos\"];\r\n  this.vel = option_obj[\"vel\"];\r\n  this.radius = option_obj[\"radius\"];\r\n  this.color = option_obj[\"color\"];\r\n}\r\n\r\nconst testCircle = new MovingObject({\r\npos: [50, 50],\r\nvel: [3, 4],\r\nradius: 25,\r\ncolor: \"green\"\r\n})\r\n\r\n\r\n\r\nMovingObject.prototype.draw = function (ctx) {\r\n  ctx.beginPath();\r\n\r\n  ctx.arc(\r\n    this.pos[0],\r\n    this.pos[1],\r\n    this.radius,\r\n    0,\r\n    2 * Math.PI,\r\n    true\r\n  );\r\n\r\n  ctx.fillStyle = this.color;\r\n  ctx.fill()\r\n\r\n};\r\n\r\nMovingObject.prototype.move = function() {\r\n  this.pos[0] += this.vel[0];\r\n  this.pos[1] += this.vel[1];\r\n}\r\n\r\nmodule.exports = MovingObject;\r\n\n\n//# sourceURL=webpack://asteroids/./src/moving_object.js?");
 
 /***/ })
 
